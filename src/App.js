@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import io from 'socket.io-client'
+import LoginRegister from "./LoginRegister";
+import {useState} from "react";
+
+const socket = io.connect('http://localhost:3001')
 
 function App() {
+    const [loggedIn, setLoggedIn] = useState(false);
+
+
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        {loggedIn && <p>You are logged in</p>}
+        {!loggedIn && <LoginRegister socket={socket}/>}
     </div>
   );
 }
