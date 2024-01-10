@@ -4,17 +4,17 @@ import Register from "./Register";
 
 function LoginRegister(props){
     const socket = props.socket;
-    const [Screen, setScreen] = useState(true);
+    const [login, setLogin] = useState(true);
 
 
-    function login(){
-
+    function loginWindowSwitch(){
+        setLogin(!login)
     }
 
     return(
         <div>
-            {Screen && <Login socket={socket}/>}
-            {!Screen && <Register socket={socket}/>}
+            {login && <Login socket={socket} loginWindowSwitch={loginWindowSwitch}/>}
+            {!login && <Register socket={socket} loginWindowSwitch={loginWindowSwitch}/>}
         </div>
 
     )

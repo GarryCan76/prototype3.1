@@ -13,8 +13,8 @@ function Login(props){
             <input type={"text"}/>
             <input type={"password"}/>
             <input type={"password"}/>
-            <input type={"submit"} onClick={loginAttempt} name={"login"}/>
-            <input type={"Button"} onClick={loginAttempt} name={"login"}/>
+            <input type={"submit"} onClick={loginAttempt} name={"login"} value={"register"}/>
+            <button onClick={()=>{props.loginWindowSwitch()}}>Login</button>
         </div>
 
     )

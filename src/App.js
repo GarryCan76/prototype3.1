@@ -9,8 +9,6 @@ function App() {
     const [loggedIn, setLoggedIn] = useState(false);
 
 
-
-
   return (
     <div className="App">
         {loggedIn && <p>You are logged in</p>}
